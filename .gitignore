@@ -1,0 +1,53 @@
+# ── Compiled binaries & build output ────────────────────────────
+*.o
+*.obj
+*.exe
+*.out
+*.bin
+a.out
+target/
+build/
+dist/
+
+# ── Debug & profiling artefacts ──────────────────────────────────
+*.dSYM/
+*.gcda
+*.gcno
+*.profraw
+perf.data*
+
+# ── Caches & dependency directories ──────────────────────────────
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+node_modules/
+.venv/
+venv/
+
+# ── Editor / OS ──────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# ── Test & scratch output ────────────────────────────────────────
+/tmp/
+scratch/
+*.tmp
+*.test
+in*.txt
+out*.txt
+expected*.txt
+
+# ── Secrets — never commit ───────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# ── Local agent session files ────────────────────────────────────
+*.agent-session
