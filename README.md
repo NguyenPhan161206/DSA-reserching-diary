@@ -35,7 +35,8 @@ DSA-reserching-diary/
 ├── problems/           # LeetCode / Codeforces / PTIT / VNOI problem notes
 ├── practice/           # timed sessions, contest logs, weak-spot tracking
 ├── journal/            # session reflections, aha moments, error journal
-└── notes/              # scratch space, cross-topic notes, experiments
+├── notes/              # scratch space, cross-topic notes, experiments
+└── java-course/        # second track: Liang's Java book, Ch 1–44 (Java 21)
 ```
 
 **Language strategy:** C++ as primary (judges and interviews judge algorithmic intent), Python as secondary (fast prototyping, and the language of the AI stack). Same idea, two notations.
@@ -70,6 +71,34 @@ Short version:
 | 6 | Advanced (greedy, backtracking, bit tricks, number theory, segment trees) | ⬜ |
 
 **Weekly target:** 5–8 problems across 2 sessions, at least 2 solved without hints.
+
+---
+
+## ☕ The Java course track — `java-course/`
+
+A second, self-contained track whose textbook is Java: *Introduction to Java Programming
+and Data Structures* (Y. Daniel Liang), 44 chapters, restructured around **6 message
+families** instead of 44 summaries.
+
+| | |
+|---|---|
+| **Plan of record** | [`java-course/00-roadmap.md`](java-course/00-roadmap.md) — 44/44 chapters mapped, 7 gates |
+| **Start here** | [`java-course/00-toolchain/README.md`](java-course/00-toolchain/README.md) ✅ — measured, not asserted |
+| **Card format** | [`java-course/TEMPLATE-MESSAGE-CARD.md`](java-course/TEMPLATE-MESSAGE-CARD.md) |
+| **Rules** | [`AGENTS.md` §J](AGENTS.md) |
+| **Status** | G0 ✅ · Part I 🟢 8/8 (audits + teach-backs closed) · **G1 ⏳ next** — 5 exercises from Ch 2/4/5/7, closed-book |
+
+```bash
+source java-course/00-toolchain/env.sh                              # JDK 21 + Maven on PATH
+./java-course/00-toolchain/run.sh java-course/00-toolchain/lab/InputBenchmark.java
+```
+
+It does not replace `solutions/`. Part I exercises stay in each chapter's
+`exercises.md`, with the full Section D analysis (brute force, derivation, correctness,
+complexity, test table, what I got wrong) written inline in the L3 tier. A problem moves
+to `solutions/` only when it is actually submitted to a judge or becomes a self-authored
+DSA problem worth reusing — then both files link to each other. `solutions/` is the
+C++/Python judged track, so a Java-only exercise is never placed there.
 
 ---
 

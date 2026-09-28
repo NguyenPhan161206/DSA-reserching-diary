@@ -9,7 +9,7 @@
 
 | # | Date | Type | Title | Topic | Read time |
 |---|------|------|-------|-------|-----------|
-| — | *no entries yet* | — | — | — | — |
+| 1 | 2026-09-28 | insight | Teach-backs — Part I (Ch 01–08) | java-course protocol step 7 | 10 min |
 
 **Types:** `session` (what happened) · `error` (what broke and why) · `weekly` (review of the week) · `insight` (a mental model that changed)
 
@@ -44,7 +44,7 @@
 
 | Date | Insight | Origin | Diary note? |
 |------|---------|--------|-------------|
-| — | *nothing recorded yet* | — | — |
+| © | 2026-09-28 | "Numbers I recall before running were wrong ~7/7 times this month; numbers the harness prints survived." | Ch 08 matmul · Ch 02 sum-squares · Ch 01 boxing (all fabricated-then-measured) | [reaserching-diary → dev_foundation/dsa/01-learning-roadmap.md](https://github.com/NguyenPhan161206/reaserching-diary/blob/main/dev_foundation/dsa/01-learning-roadmap.md) |
 
 ---
 

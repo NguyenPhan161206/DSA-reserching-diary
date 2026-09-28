@@ -17,15 +17,20 @@
 | LeetCode/Codeforces/PTIT notes | `problems/` | — |
 | Timed session logs | `practice/` | — |
 | Session reflections, error journal | `journal/` | — |
+| Java course track (Liang, Ch 1–44) | `java-course/` | A chapter summary in `notes/` |
 | Theory, roadmap, tooling notes | **reaserching-diary** `dev_foundation/dsa/` | Duplicating roadmap content here |
 
 **Split rule:** if it needs *code* to be understood → here. If it needs *understanding* to be understood → diary.
+
+**The `java-course/` exception:** this repo is C++/Python-first for DSA, but the course
+textbook is Java. `java-course/` is a self-contained second track with its own rules
+(Section J) — it does not change the rules for `solutions/`.
 
 ## SECTION C: NAMING CONVENTIONS
 - Folders: `NN-topic-name/` (2-digit prefix = learning order, chronological)
 - Solution folders: `NN-kebab-case-problem-name/`
 - Files: `approach.md`, `solution.cpp`, `solution.py` (fixed names — the agent and human both rely on them)
-- Commits: `[topic] add: problem-name (O(n log n) time, O(n) space)` / `[fix] correct: ...` / `[journal] update: ...`
+- Commits: `[topic] add: problem-name (O(n log n) time, O(n) space)` / `[fix] correct: ...` / `[journal] update: ...` / `[java] chNN: chapter-title (M-codes)`
 
 ## SECTION D: WRITE-UP QUALITY CHECKLIST
 Before a solution is considered done:
@@ -50,7 +55,7 @@ Before a solution is considered done:
 ## SECTION F: AUTONOMY LEVELS
 - **AUTO:** read, list, run tests, compile, `git status`/`log`/`diff`, create problem folders, log practice sessions
 - **SUGGEST:** write `approach.md`, draft solution code, update README index tables
-- **ASK:** commit, push, create a remote, rename/move a problem folder, delete a solution
+- **ASK:** commit, push, create a remote, rename/move a problem folder, delete a solution, change a message-family mapping in `java-course/00-roadmap.md`
 - **BLOCK:** pushing secrets, rewriting history, force-push, bulk-deleting solutions
 
 ## SECTION G: PUSH POLICY
@@ -70,6 +75,56 @@ After every change in this repo:
 3. Update `journal/README.md` if a reflection or error was recorded
 4. Update the repo README progress table if a phase advanced
 5. If a phase/topic changed status, tell the user the diary roadmap may need a sync
+
+## SECTION J: JAVA COURSE TRACK (`java-course/`)
+**Book:** *Introduction to Java Programming and Data Structures, Comprehensive Version* —
+Y. Daniel Liang. **Target:** Java 21 (LTS). **Plan of record:** `java-course/00-roadmap.md`.
+
+**The 6 message families** — every chapter maps to at least one, and a chapter with no
+mapping is an unfinished plan:
+
+| Code | Message |
+|------|---------|
+| M1 | Every line of code has a cost, and the runtime is a program you can read |
+| M2 | Types are a tool that moves errors earlier — paid for in boilerplate and erasure |
+| M3 | Complexity is the real spec; every structure trades one operation for another |
+| M4 | Failure is normal; model the boundary (exceptions, I/O, network, DB) |
+| M5 | Abstraction is a ladder — know which rung you are standing on |
+| M6 | You do not know it is right until a test says so (cross-cutting) |
+
+**Per-chapter artefact set** — exactly three, no more:
+```
+p1-fundamentals/ch02-elementary-programming/
+├── message-card.md     # REQUIRED. 7 sections, template in TEMPLATE-MESSAGE-CARD.md
+├── exercises.md        # L1 recall / L2 apply / L3 derive + 5 closed-book questions
+└── lab/                # 1–3 runnable .java files, compiled and self-tested
+```
+
+**Rules:**
+- **Never copy the book.** Message cards are assertions you *derived*, not translated
+  prose. At most one short quote, with a section reference. Code is rewritten from
+  scratch, minimal enough to be understood.
+- **Every message needs a counter-example.** A message no example can break is not
+  finished.
+- **Every chapter names at least one thing the book does not say out loud** — that is
+  usually where the value is.
+- **`🟢` requires the lab to have been compiled and run**, with the output pasted into
+  the card. Unrun code is `🟡` at best.
+- `🆕 Java 21 delta vs sách` is a mandatory section, not optional.
+- **Boundary rule (revised 2026-09-28):** a book exercise is **not** automatically a
+  `solutions/` entry. Book exercises stay in `exercises.md`, and the **L3 derive tier
+  must carry the full Section D analysis inline** (brute force, derivation, correctness
+  argument, complexity with reasoning, test table, what I got wrong). A problem is
+  **promoted** to `solutions/<topic>/<NN-name>/approach.md` only when it is actually
+  submitted to a judge or becomes a self-authored DSA problem worth reusing — and then
+  both files link to each other. `solutions/` is the C++/Python judged track; do not put
+  a Java-only exercise there under a `solution.cpp` filename.
+- **Toolchain:** `source java-course/00-toolchain/env.sh`, then
+  `./java-course/00-toolchain/run.sh <file.java>` to compile and run any lab. A `.class`
+  file in the repo is a defect.
+- **Progress is measured by gates passed**, not chapters read.
+
+**Commit format:** `[java] chNN: chapter-title (M1, M3)`
 
 ---
 *Config version: 1.0 — created 2026-09-28 alongside the diary's config v3.3.*

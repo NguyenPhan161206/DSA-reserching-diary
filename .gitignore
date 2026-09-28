@@ -9,6 +9,21 @@ target/
 build/
 dist/
 
+# ── Java / JVM build output ──────────────────────────────────────
+*.class
+*.jar
+*.war
+!java-course/**/maven-wrapper.jar
+target/
+build-classes/
+# output dir of java-course/00-toolchain/run.sh
+.java-course-build/
+hs_err_pid*.log
+replay_pid*.log
+*.jfr
+# keep the I/O lab sample data (Ch 12, 17) even though in*/out* are ignored
+!java-course/**/lab/data/*.txt
+
 # ── Debug & profiling artefacts ──────────────────────────────────
 *.dSYM/
 *.gcda
